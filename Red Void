@@ -1,0 +1,195 @@
+-- This script has been made by @StarrotRBLX on youtube
+
+local playerName = "YOUR NAME HERE"  -- Put your name here
+local TweenService = game:GetService("TweenService")
+
+
+local function findAndHandlePlayer(playerName)
+	local player = game.Players:FindFirstChild(playerName)
+
+	if player then
+		local character = player.Character
+		if character then
+			-- Ensure HumanoidRootPart exists before attempting to anchor it
+			local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+			if humanoidRootPart then
+				humanoidRootPart.Anchored = true
+			else
+				print("HumanoidRootPart not found!")
+			end
+
+			local humanoid = character:FindFirstChild("Humanoid")
+			if humanoid then
+				humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+				
+				local sound = Instance.new("Sound")
+				sound.SoundId = "rbxassetid://1846999567"
+				sound.Looped = true
+				sound.Parent = character.HumanoidRootPart
+				sound:Play()
+
+				local bgui = Instance.new("BillboardGui")
+				bgui.Adornee = character.Head
+				bgui.Size = UDim2.new(0, 200, 0, 50)  -- Make it a reasonable size
+				bgui.StudsOffset = Vector3.new(0, 2, 0)  -- Adjust vertical position
+				bgui.Parent = character.Head
+
+				local text = Instance.new("TextLabel")
+				text.BackgroundTransparency = 1
+				text.Size = UDim2.new(1, 0, 1, 0)
+				text.TextScaled = true
+				text.Font = Enum.Font.IndieFlower
+				text.Text = ""
+				text.TextColor3 = Color3.fromRGB(0, 0, 0)  -- Set text color to red for visibility
+				text.Parent = bgui
+				local TextSound = Instance.new("Sound")
+				TextSound.SoundId = "rbxassetid://6042053626"
+				TextSound.Parent = humanoidRootPart
+				TextSound.Volume = 4
+				local textprint = function(textinput, speed)
+					for i = 1, #textinput do
+						wait(speed)
+						text.Text = string.sub(textinput, 1, i)
+						TextSound:Play()
+					end
+				end
+				wait(0.5)
+				textprint("Argh...", 0.1)
+				wait(2)
+				textprint("I don't feel well...", 0.1)
+				wait(3)
+				textprint("...", 0.5)
+				wait(2)
+				textprint("haha...", 0.1)
+				wait(1)
+				textprint("hahahahaha...", 0.1)
+				wait(1)
+				text.Text = ""
+				local particle = Instance.new("ParticleEmitter")
+				particle.Brightness = 7.11
+				particle.Color = ColorSequence.new(Color3.new(177, 0, 0)) 
+				particle.LightEmission = 1
+				particle.LightInfluence = 0
+				particle.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+				particle.Size = NumberSequence.new(5)
+				particle.Texture = "rbxassetid://8096189152"
+				particle.Transparency = NumberSequence.new(0, 1, 0)
+				particle.Lifetime = NumberRange.new(0.8, 0.9)
+				particle.Rate = 17
+				particle.Rotation = NumberRange.new(-360, 360)
+				particle.RotSpeed = NumberRange.new(360)
+				particle.Speed = NumberRange.new(0.001)
+				particle.SpreadAngle = Vector2.new(-360, 360)
+				particle.ShapeInOut = Enum.ParticleEmitterShapeInOut.Inward
+				particle.LockedToPart = true
+				local particle3 = Instance.new("ParticleEmitter")
+				particle3.Brightness = 2
+				particle3.Color = ColorSequence.new(Color3.new(170, 0, 0)) 
+				particle3.LightEmission = 0.5
+				particle3.LightInfluence = 0
+				particle3.Orientation = Enum.ParticleOrientation.FacingCameraWorldUp
+				particle3.Size = NumberSequence.new(3)
+				particle3.Squash = NumberSequence.new(1, 1, 2, 1)
+				particle3.Texture = "rbxassetid://4509687978"
+				particle3.Transparency = NumberSequence.new(1, 0.5, 1)
+				particle3.Lifetime = NumberRange.new(0.5, 1)
+				particle3.Rate = 100
+				particle3.Rotation = NumberRange.new(0)
+				particle3.RotSpeed = NumberRange.new(0)
+				particle3.Speed = NumberRange.new(15, 30)
+				particle3.SpreadAngle = Vector2.new(-3, 3)
+				particle3.ShapeInOut = Enum.ParticleEmitterShapeInOut.Outward
+				particle3.LockedToPart = true
+				local Attach = character.HumanoidRootPart.RootAttachment
+				particle.Parent = Attach
+				particle3.Parent = Attach
+				sound.Volume = 10
+				TextSound.Volume = 7
+				local Pitch = Instance.new("PitchShiftSoundEffect")
+				Pitch.Octave = 0.5
+				Pitch.Parent = TextSound
+				text.TextColor3 = Color3.fromRGB(255, 0, 0)
+				character.Head.Color = Color3.fromRGB(170, 0, 0)
+				character["Left Arm"].Color = Color3.fromRGB(170, 0, 0)
+				character["Right Arm"].Color = Color3.fromRGB(170, 0, 0)
+				character["Left Leg"].Color = Color3.fromRGB(170, 0, 0)
+				character["Right Leg"].Color = Color3.fromRGB(170, 0, 0)
+				character.Torso.Color = Color3.fromRGB(170, 0, 0)
+				character.Head.face.Texture = "http://www.roblox.com/asset/?id=845428596"
+				textprint("HAHAHAHAHAHAHA!!!", 0.1)
+				wait(2)
+				textprint("you fools.", 0.1)
+				wait(1)
+				textprint("look at you all.", 0.1)
+				wait(2)
+				textprint("you're all like ants to me.", 0.1)
+				wait(2)
+				textprint("messing with you all I like and laughing at your reactions.", 0.1)
+				wait(3)
+				textprint("now...", 0.1)
+				wait(2)
+				sound:Stop()
+				textprint("THERE IS NO ESCAPE.", 0.4)
+				local sound2 = Instance.new("Sound")
+				sound2.SoundId = "rbxassetid://7854285068"
+				sound2.Volume = 10
+				sound2.Parent = workspace
+				sound2:Play()
+				for _, player in pairs(game.Players:GetChildren()) do
+					local char = player.Character
+					if char then
+						local hrp = char:FindFirstChild("HumanoidRootPart")
+						if hrp and player.Name ~= playerName then
+							hrp.Anchored = true
+							local tween = TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 0, false, 0)
+							local goal = {}
+							goal.Position = Vector3.new(humanoidRootPart.Position.X, humanoidRootPart.Position.Y+10, humanoidRootPart.Position.Z)
+							local tweenserv = TweenService:Create(hrp, tween, goal)
+							tweenserv:Play()
+						end
+					end
+				end
+				wait(3)
+				for _, player in pairs(game.Players:GetChildren()) do
+					local char = player.Character
+					if char then
+						local h = char:FindFirstChild("Humanoid")
+						if h and player.Name ~= playerName then
+							local hrp = char:FindFirstChild("HumanoidRootPart")
+							if hrp then
+								local FirePart = Instance.new("Part")
+								FirePart.Anchored = true
+								FirePart.Transparency = 1
+								FirePart.CanCollide = false
+								FirePart.Parent = workspace
+								FirePart.Position = hrp.Position  -- Position the fire at the HumanoidRootPart
+
+								local Fire = Instance.new("Fire")
+								Fire.Color = Color3.fromRGB(113, 0, 0)
+								Fire.Heat = 25
+								Fire.Size = 10
+								Fire.Parent = FirePart
+							end
+
+							h.Health = 0 
+						end
+					end
+				end
+				humanoidRootPart.Anchored = false
+				text.Font = Enum.Font.Creepster
+				text.Text = "RED VOID"
+			else
+				print("Humanoid not found!")
+			end
+		else
+			print("Character is not available yet!")
+		end
+	else
+		print("Player not found!")
+	end
+end
+
+-- Call the function to find the player and handle their character
+wait(1)
+print("script running")
+findAndHandlePlayer(playerName)
